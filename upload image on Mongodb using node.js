@@ -6,7 +6,7 @@
 </form>
 
 //schema 
-
+//Schema name Images.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -29,11 +29,12 @@ express = require('express')
    , util = require('util')
    , upload = multer({limits: {fileSize: 2000000 },dest:'/uploads/'}) ;
 
+//import Schema ja file
 const Images=require('../models/image');
 
 router.get('/', function(req, res){ res.render('shop/index'); });
 
-
+//upload images
 router.post('/images', upload.single('picture'), function (req, res){
 if (req.file == null) {
 
@@ -47,6 +48,24 @@ var newItem = new Images();
 
 
 });
+
+//get images and show
+
+
+router.get('/picture/:picture', async function(req, res){
+
+   var filename = req.params.picture;
+
+
+    const images = await Images.findOne({_id:filename });
+    res.setHeader('content-type', images.img.contentType);
+    res.send(images.img.data);
+
+
+
+
+});
+
 
 
 module.exports = router;
