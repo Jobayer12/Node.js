@@ -1,0 +1,70 @@
+/* @import url('https://fonts.googleapis.com/css?family=Darker+Grotesque:300,400,500,600,700,800,900&display=swap'); */
+
+.title{
+    font-weight: bold;
+}
+
+.mainmenu {
+    display: block;
+    color: #000;
+    padding: 12px;
+    position: relative;
+}
+
+
+.mainmenu:hover:after {
+
+    color: #000;
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    height: 2px;
+    background: #000;
+    content: "";
+    width: 30px;
+    margin-left: -15px;
+}
+
+.linksocial a{
+
+    padding: 12px;
+    color: #000;
+}
+
+.linksocial a:hover{
+
+    color: #000;
+    text-decoration: none;
+}
+.placeholder{
+    font-size: 18px;
+    color: black;
+}
+
+.photo_wrapper{
+    height: 190px;
+    margin: 20px;
+}
+.photo_wrapper img{
+
+    
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.photo_wrapper img:hover{
+
+    filter: grayscale(100%);
+    transform: scale(1.1);
+    
+}
+
+.top-heading{
+   
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+
